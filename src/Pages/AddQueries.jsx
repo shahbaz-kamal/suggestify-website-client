@@ -128,7 +128,7 @@ const AddQueries = () => {
 
             <div className="form-control mt-6 md:col-span-2">
               <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
-                Login
+              Add query
               </button>
             </div>
           </form>

@@ -11,6 +11,7 @@ export default {
         accent: "rgb(188, 83, 231)",
         footer: "#DCE6E7",
         login: '#ECF6F1',
+        stroke:'rgba(17, 17, 17, 0.1)'
       },
     },
   },
