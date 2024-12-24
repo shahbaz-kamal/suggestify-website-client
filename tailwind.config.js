@@ -10,6 +10,7 @@ export default {
         secondary: "rgb(166, 127, 237)",
         accent: "rgb(188, 83, 231)",
         footer: "#DCE6E7",
+        login: '#ECF6F1',
       },
     },
   },

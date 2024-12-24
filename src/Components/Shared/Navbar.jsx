@@ -1,6 +1,36 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.webp";
 
 const Navbar = () => {
+  const links = (
+    <>
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          `rounded-md transition-all duration-300 ${
+            isActive
+              ? "bg-primary font-semibold text-lg"
+              : "hover:underline text-base"
+          }`
+        }
+      >
+        <li className="px-2 py-2 hover:underline">Home</li>
+      </NavLink>
+      <NavLink
+        to={"/queries"}
+        className={({ isActive }) =>
+          `rounded-md transition-all duration-300 ${
+            isActive
+              ? "bg-primary font-semibold text-lg"
+              : "hover:underline text-base"
+          }`
+        }
+      >
+        <li className="px-2 py-2 hover:underline">Queries</li>
+      </NavLink>
+    </>
+  );
   return (
     <div className="navbar  mb-6 md:mb-8 mt-2">
       <div className="navbar-start">
@@ -25,52 +55,27 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <div className="flex items-center">
+          <a className="btn btn-ghost text-xl md:text-2xl hidden md:inline-flex">
+            Suggestify
+          </a>
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full">
+            <img className="w-full h-full rounded-full" src={logo} alt="" />
+          </div>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link to={"/log-in"}>
+          <button className="bg-accent hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );
