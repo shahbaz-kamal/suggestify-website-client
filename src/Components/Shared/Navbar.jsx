@@ -1,8 +1,21 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.webp";
+import UseAuth from "../../Hooks/UseAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const {
+    user,
+    setUser,
+    loading,
+    setLoading,
+    updateUser,
+    logoutUser,
+    googleSignInUser,
+    signInWithEmailUser,
+    registerUser,
+  } = UseAuth();
   const links = (
     <>
       <NavLink
@@ -29,8 +42,68 @@ const Navbar = () => {
       >
         <li className="px-2 py-2 hover:underline">Queries</li>
       </NavLink>
+      {user && user?.email ? (
+        <NavLink
+          to={"/recommendations-for-me"}
+          className={({ isActive }) =>
+            `rounded-md transition-all duration-300 ${
+              isActive
+                ? "bg-primary font-semibold text-lg"
+                : "hover:underline text-base"
+            }`
+          }
+        >
+          <li className="px-2 py-2 hover:underline">Recommendations for me</li>
+        </NavLink>
+      ) : (
+        ""
+      )}
+      {user && user?.email ? (
+        <NavLink
+          to={"/my-queries"}
+          className={({ isActive }) =>
+            `rounded-md transition-all duration-300 ${
+              isActive
+                ? "bg-primary font-semibold text-lg"
+                : "hover:underline text-base"
+            }`
+          }
+        >
+          <li className="px-2 py-2 hover:underline">My Queries</li>
+        </NavLink>
+      ) : (
+        ""
+      )}
+      {user && user?.email ? (
+        <NavLink
+          to={"/my-recommendations"}
+          className={({ isActive }) =>
+            `rounded-md transition-all duration-300 ${
+              isActive
+                ? "bg-primary font-semibold text-lg"
+                : "hover:underline text-base"
+            }`
+          }
+        >
+          <li className="px-2 py-2 hover:underline">My recommendations</li>
+        </NavLink>
+      ) : (
+        ""
+      )}
     </>
   );
+
+  // *log out
+
+  const handleLogOut = () => {
+    logoutUser().then((result) => {
+      Swal.fire({
+        // title: "Good job!",
+        text: "Log Out Successfull",
+        icon: "success",
+      });
+    });
+  };
   return (
     <div className="navbar  mb-6 md:mb-8 mt-2">
       <div className="navbar-start">
@@ -53,7 +126,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-64 p-2 shadow"
           >
             {links}
           </ul>
@@ -70,12 +143,45 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 space-x-2">{links}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to={"/log-in"}>
-          <button className="bg-accent hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
-            Login
-          </button>
-        </Link>
+      <div className="navbar-end gap-2">
+        {user && user?.email ? (
+          <div
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content={user && user.email ? user.displayName : ""}
+            data-tooltip-place="bottom"
+            className="w-10 h-10 z-10 relative"
+          >
+            <img
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover rounded-full"
+              src={user.photoURL || ""}
+              alt="user photo"
+            />{" "}
+          </div>
+        ) : (
+          ""
+        )}
+        {user && user?.email ? (
+          <Link>
+            <button
+              onClick={handleLogOut}
+              className="bg-accent hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
+            >
+              Logout
+            </button>
+          </Link>
+        ) : (
+          <Link to={"/log-in"}>
+            <button
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="login to see private content"
+              data-tooltip-place="bottom"
+              className="bg-accent hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
+            >
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
