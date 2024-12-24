@@ -1,0 +1,63 @@
+[
+    {
+      "productName": "Apple MacBook Pro 16-inch",
+      "productBrand": "Apple",
+      "productImage": "https://i.ibb.co.com/WWztHyP/Mac-Book-Pro-14-inch.jpg",
+      "boycottingReason": "Too expensive for the performance it offers, considering alternatives.",
+      "questionerEmail": "shahbazkamal384@gmail.com",
+      "questionerName": "Shahbaz Kamal",
+      "recommendationCount": 0,
+      "dateAndTime": "2024-12-24T15:01:33.000Z"
+    },
+    {
+      "productName": "Samsung Galaxy S24 Ultra",
+      "productBrand": "Samsung",
+      "productImage": "https://i.ibb.co.com/XDcfMXS/Samsung-Galaxy-S21.webp",
+      "boycottingReason": "The camera quality is not as advertised, especially in low-light conditions.",
+      "questionerEmail": "shahbazkamal384@gmail.com",
+      "questionerName": "Shahbaz Kamal",
+      "recommendationCount": 0,
+      "dateAndTime": "2024-12-24T15:15:22.000Z"
+    },
+    {
+      "productName": "Apple Watch Series 9",
+      "productBrand": "Apple",
+      "productImage": "https://i.ibb.co.com/rktzr4s/Apple-Watch-Series-7.webp",
+      "boycottingReason": "Overpriced for basic fitness tracking and limited functionality.",
+      "questionerEmail": "shahbazkamal384@gmail.com",
+      "questionerName": "Shahbaz Kamal",
+      "recommendationCount": 0,
+      "dateAndTime": "2024-12-24T15:30:45.000Z"
+    },
+    {
+      "productName": "HP Spectre x360 14",
+      "productBrand": "HP",
+      "productImage": "https://i.ibb.co.com/DppD5jY/Mac-Book-Air-M1.png",
+      "boycottingReason": "The laptop screen flickers at high brightness levels and is frustrating to use.",
+      "questionerEmail": "shahbazkamal384@gmail.com",
+      "questionerName": "Shahbaz Kamal",
+      "recommendationCount": 0,
+      "dateAndTime": "2024-12-24T15:45:00.000Z"
+    },
+    {
+      "productName": "Google Pixel 8 Pro",
+      "productBrand": "Google",
+      "productImage": "https://i.ibb.co.com/R0JB31b/Google-Pixel-7.webp",
+      "boycottingReason": "The display is prone to burn-in after extended use.",
+      "questionerEmail": "shahbazkamal384@gmail.com",
+      "questionerName": "Shahbaz Kamal",
+      "recommendationCount": 0,
+      "dateAndTime": "2024-12-24T16:00:00.000Z"
+    },
+    {
+      "productName": "Fitbit Sense 2",
+      "productBrand": "Fitbit",
+      "productImage": "https://i.ibb.co.com/kHh9C7s/Fitbit-Versa-3.jpg",
+      "boycottingReason": "Battery life is shorter than expected, even after multiple updates.",
+      "questionerEmail": "shahbazkamal384@gmail.com",
+      "questionerName": "Shahbaz Kamal",
+      "recommendationCount": 0,
+      "dateAndTime": "2024-12-24T16:15:30.000Z"
+    }
+  ]
+  

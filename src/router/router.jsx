@@ -8,14 +8,14 @@ import MyRecommendations from "../Pages/MyRecommendations";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 import PrivateRoute from "./PrivateRoute";
-import AddQueries from "../Components/AddQueries";
+import AddQueries from "../Pages/AddQueries";
 import Error from "../Components/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<Error></Error>,
+    errorElement: <Error></Error>,
     children: [
       { path: "/", element: <Home></Home> },
       { path: "/queries", element: <Queries></Queries> },
