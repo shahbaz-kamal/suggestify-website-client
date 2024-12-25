@@ -1,8 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Title from "../Components/Shared/Title";
 import { TfiLayoutColumn2, TfiLayoutColumn3 } from "react-icons/tfi";
+import AllQueryCard from "../Components/AllqueryCard";
+import UseAxiosSecure from "../Hooks/UseAxiosSecure";
+import Swal from "sweetalert2";
 
 const Queries = () => {
+  const [queries, setQueries] = useState([]);
+  const axiosSecure = UseAxiosSecure();
+
+  const [singleColumn, setSingleColumn] = useState(false);
+  const [doubleColumn, setDoubleColumn] = useState(false);
+  const [trippleColumn, setTripleColumn] = useState(true);
+
+  const handleTwoColumn = () => {
+    setDoubleColumn(true);
+    setTripleColumn(false);
+  };
+  const handleThreeColumn = () => {
+    setDoubleColumn(false);
+    setTripleColumn(true);
+  };
+
+  useEffect(() => {
+    const fetchAllQueries = async () => {
+      try {
+        const response = await axiosSecure.get(`all-queries`);
+        const sortedQueries = await response.data.sort(
+          (a, b) => new Date(b.dateAndTime) - new Date(a.dateAndTime)
+        );
+        setQueries(sortedQueries);
+      } catch (error) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
+      }
+    };
+    fetchAllQueries();
+  }, []);
+  console.log(queries);
+
   return (
     <div className="px-2 md:px-0 ">
       <Title title={"All Queries"}></Title>
@@ -28,9 +67,10 @@ const Queries = () => {
             </svg>
           </label>
         </div>
-        <div className="flex gap-4 items-center">
+        <div className=" gap-4 items-center hidden lg:flex">
           <h3 className="text-xl">Select Grid Layout</h3>
           <div
+            onClick={handleTwoColumn}
             data-tooltip-id="my-tooltip"
             data-tooltip-content="click to view 2 column layout"
             className="bg-gray-300 p-3 rounded-full"
@@ -38,6 +78,7 @@ const Queries = () => {
             <TfiLayoutColumn2 size={30} />
           </div>
           <div
+            onClick={handleThreeColumn}
             data-tooltip-id="my-tooltip"
             data-tooltip-content="click to view 3 column layout"
             className="bg-gray-300 p-3 rounded-full"
@@ -46,8 +87,14 @@ const Queries = () => {
           </div>
         </div>
       </div>
-      <div>
-        card
+      <div
+        className={`grid gap-6 grid-cols-1 md:grid-cols-2  ${
+          trippleColumn ? "lg:grid-cols-3" : "lg:grid-cols-2"
+        } `}
+      >
+        {queries.map((query) => (
+          <AllQueryCard key={query._id} query={query}></AllQueryCard>
+        ))}
       </div>
     </div>
   );
