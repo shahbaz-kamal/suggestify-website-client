@@ -9,7 +9,7 @@ const Queries = () => {
   const [queries, setQueries] = useState([]);
   const axiosSecure = UseAxiosSecure();
 
-  const [singleColumn, setSingleColumn] = useState(false);
+  const [search, setSearch] = useState("");
   const [doubleColumn, setDoubleColumn] = useState(false);
   const [trippleColumn, setTripleColumn] = useState(true);
 
@@ -25,7 +25,9 @@ const Queries = () => {
   useEffect(() => {
     const fetchAllQueries = async () => {
       try {
-        const response = await axiosSecure.get(`all-queries`);
+        const response = await axiosSecure.get(
+          `queries-for-all-query-page?search=${search}`
+        );
         const sortedQueries = await response.data.sort(
           (a, b) => new Date(b.dateAndTime) - new Date(a.dateAndTime)
         );
@@ -39,8 +41,20 @@ const Queries = () => {
       }
     };
     fetchAllQueries();
-  }, []);
+  }, [search]);
   console.log(queries);
+  console.log(search);
+
+  // handling reseting the parameters
+
+  const handleResetLayout = () => {
+    setDoubleColumn(false);
+    setTripleColumn(true);
+  };
+
+  const handleResetSearch = () => {
+    setSearch("");
+  };
 
   return (
     <div className="px-2 md:px-0 ">
@@ -49,6 +63,7 @@ const Queries = () => {
         <div className="w-full md:w-auto">
           <label className="input input-bordered flex items-center gap-2">
             <input
+              onChange={(e) => setSearch(e.target.value)}
               type="text"
               className="grow w-full md:w-96"
               placeholder="Search by Product Name"
@@ -66,6 +81,18 @@ const Queries = () => {
               />
             </svg>
           </label>
+        </div>
+        <div onClick={handleResetSearch}>
+          {" "}
+          <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
+            Reset Search
+          </button>
+        </div>
+        <div onClick={handleResetLayout}>
+          {" "}
+          <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg hidden lg:flex">
+            Reset Layout
+          </button>
         </div>
         <div className=" gap-4 items-center hidden lg:flex">
           <h3 className="text-xl">Select Grid Layout</h3>
