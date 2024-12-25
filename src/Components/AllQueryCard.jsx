@@ -1,8 +1,9 @@
 import { format } from "date-fns";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllQueryCard = ({ query }) => {
-  const {
+  const {_id,
     productName,
     productBrand,
     productImage,
@@ -32,13 +33,13 @@ const AllQueryCard = ({ query }) => {
       </div>
       <hr className="my-5 border-t-2" />
       <p>
-            <span className="font-semibold">Product Name:</span>{" "}
-            <span>{productName}</span>
-          </p>
-          <p>
-            <span className="font-semibold">Product Brand:</span>{" "}
-            <span>{productBrand}</span>
-          </p>
+        <span className="font-semibold">Product Name:</span>{" "}
+        <span>{productName}</span>
+      </p>
+      <p>
+        <span className="font-semibold">Product Brand:</span>{" "}
+        <span>{productBrand}</span>
+      </p>
       {/* question */}
       <div className="flex flex-col  gap-4 md:gap-6 lg:gap-8 md:items-center">
         <div className="w-[70%] md:w-[70%] flex justify-center mx-auto md:mx-0">
@@ -54,13 +55,18 @@ const AllQueryCard = ({ query }) => {
             <span className="font-semibold">Boycotting reason:</span>{" "}
             <span>{boycottingReason}</span>
           </p>
-          <p>
+          <p className="">
             <span className="font-semibold">Recommanded by Users:</span>{" "}
             <span>{recommendationCount}</span>
           </p>
-          <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
-            Recommend
-          </button>
+          <div>
+            
+            <Link to={`/query-details/${_id}`}>
+              <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
+                Recommend
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

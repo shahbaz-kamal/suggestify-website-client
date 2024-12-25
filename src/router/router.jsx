@@ -10,6 +10,7 @@ import Register from "../Pages/Auth/Register";
 import PrivateRoute from "./PrivateRoute";
 import AddQueries from "../Pages/AddQueries";
 import Error from "../Components/Error";
+import QueryDetails from "../Pages/QueryDetails";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
       { path: "/log-in", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
       { path: "/add-queries", element: <AddQueries></AddQueries> },
+      { path: "/query-details/:id", element: <QueryDetails></QueryDetails> },
     ],
   },
 ]);
