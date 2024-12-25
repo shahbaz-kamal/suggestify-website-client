@@ -31,7 +31,7 @@ const QueryDetails = () => {
     };
     fetchSinglelQuery();
     // *getting all recommendations for this query
-  
+
     fetchReccomendations();
   }, [id]);
   const fetchReccomendations = async () => {
@@ -122,26 +122,26 @@ const QueryDetails = () => {
         });
       });
   };
-  // if (user?.email === questionerEmail) {
-  //   Swal.fire({
-  //     title:
-  //       "As this query is posted by you, you cant recommend for this query. You can only view the query details.",
-  //     showClass: {
-  //       popup: `
-  //     animate__animated
-  //     animate__fadeInUp
-  //     animate__faster
-  //   `,
-  //     },
-  //     hideClass: {
-  //       popup: `
-  //     animate__animated
-  //     animate__fadeOutDown
-  //     animate__faster
-  //   `,
-  //     },
-  //   });
-  // }
+  if (user?.email === questionerEmail) {
+    Swal.fire({
+      title:
+        "As this query is posted by you, you cant recommend for this query. You can only view the query details.",
+      showClass: {
+        popup: `
+      animate__animated
+      animate__fadeInUp
+      animate__faster
+    `,
+      },
+      hideClass: {
+        popup: `
+      animate__animated
+      animate__fadeOutDown
+      animate__faster
+    `,
+      },
+    });
+  }
 
   // *for getting all recommendations for this query
 
@@ -276,17 +276,24 @@ const QueryDetails = () => {
       </section>
 
       {/* all recomendation section */}
-      <section className="mt-6 md:mt-8 lg:mt-10">
-        <Title title={"All Recommendation For This Query"}></Title>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {queryRecommendations.map((recommendation) => (
-            <AllRecommendationsCard
-              key={recommendation._id}
-              recommendation={recommendation}
-            ></AllRecommendationsCard>
-          ))}
-        </div>
-      </section>
+      {queryRecommendations.length ? (
+        <section className="mt-6 md:mt-8 lg:mt-10">
+          <Title title={"All Recommendation For This Query"}></Title>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {queryRecommendations.map((recommendation) => (
+              <AllRecommendationsCard
+                key={recommendation._id}
+                recommendation={recommendation}
+              ></AllRecommendationsCard>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section>
+          <Title title={"All Recommendation For This Query"}></Title>
+          <h3 className="text-lg md:text-xl text-center font-semibold">There is no recommendetaion for this query yet</h3>
+        </section>
+      )}
     </div>
   );
 };

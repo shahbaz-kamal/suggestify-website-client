@@ -67,14 +67,14 @@ const MyQueriesCard = ({ myQuery }) => {
                   View Details
                 </button>
               </Link>
-              <Link to={`/query-details/${_id}`}>
+              <Link to={`/update-query/${_id}`}>
                 <button className="bg-cyan-500 hover:bg-cyan-600 text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
-                Update
+                  Update
                 </button>
               </Link>
-              <Link to={`/query-details/${_id}`}>
+              <Link to={`/update-query`}>
                 <button className="bg-red-500 hover:bg-red-600 text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
-               Delete
+                  Delete
                 </button>
               </Link>
             </div>
