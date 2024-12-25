@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AddQueries from "./AddQueries";
 import Title from "../Components/Shared/Title";
 import { Link } from "react-router-dom";
+import UseAxiosSecure from "../Hooks/UseAxiosSecure";
+import UseAuth from "../Hooks/UseAuth";
+import MyQueriesCard from "../Components/MyQueriesCard";
 
 const MyQueries = () => {
+  const { user } = UseAuth();
+  const [myQueries, setMyQueries] = useState([]);
+  const axiosSecure = UseAxiosSecure();
+  useEffect(() => {
+    axiosSecure
+      .get(`/my-queries/${user?.email}`)
+      .then((res) => {
+        console.log(res.data);
+        setMyQueries(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
-    <div>
-      This is my queries
+    <div className="px-2 md:px-0 space-y-6 md:space-y-8 lg:space-y-10">
+      {/* My queries */}
+      <section>
+        <Title title={"My queries"}></Title>
+        <div className="mb-6">
+          <h1 className="text-center text-color-text text-lg md:text-xl ">
+            You haven't added any queries yet. Please add a query to see your
+            queries here
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {myQueries.map((myQuery) => (
+            <MyQueriesCard key={myQuery._id} myQuery={myQuery}></MyQueriesCard>
+          ))}
+        </div>
+      </section>
       {/* add query banner */}
       <section>
         <Title title={"Add Queries"}></Title>
