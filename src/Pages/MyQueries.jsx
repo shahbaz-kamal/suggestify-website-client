@@ -10,6 +10,15 @@ const MyQueries = () => {
   const { user } = UseAuth();
   const [myQueries, setMyQueries] = useState([]);
   const axiosSecure = UseAxiosSecure();
+
+  const refresh = async () => {
+    try {
+      const response = await axiosSecure.get(`/my-queries/${user?.email}`);
+      setMyQueries(response.data);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
   useEffect(() => {
     axiosSecure
       .get(`/my-queries/${user?.email}`)
@@ -27,14 +36,24 @@ const MyQueries = () => {
       <section>
         <Title title={"My queries"}></Title>
         <div className="mb-6">
-          <h1 className="text-center text-color-text text-lg md:text-xl ">
-            You haven't added any queries yet. Please add a query to see your
-            queries here
-          </h1>
+          {myQueries.length ? (
+            ""
+          ) : (
+            <h1 className="text-center text-color-text text-lg md:text-xl ">
+              You haven't added any queries yet. Please add a query to see your
+              queries here
+            </h1>
+          )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {myQueries.map((myQuery) => (
-            <MyQueriesCard key={myQuery._id} myQuery={myQuery}></MyQueriesCard>
+            <MyQueriesCard
+              key={myQuery._id}
+              myQuery={myQuery}
+              setMyQueries={setMyQueries}
+              myQueries={myQueries}
+              refresh={refresh}
+            ></MyQueriesCard>
           ))}
         </div>
       </section>

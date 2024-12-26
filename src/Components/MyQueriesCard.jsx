@@ -1,8 +1,11 @@
 import { format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 
-const MyQueriesCard = ({ myQuery }) => {
+const MyQueriesCard = ({ myQuery, myQueries, setMyQueries, refresh }) => {
+  const axiosSecure = UseAxiosSecure();
   const {
     _id,
     productName,
@@ -16,6 +19,39 @@ const MyQueriesCard = ({ myQuery }) => {
     recommendationCount,
     dateAndTime,
   } = myQuery;
+
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log(_id);
+        axiosSecure
+          .delete(`delete-query?id=${_id}`)
+          .then((res) => {
+            console.log(res.data);
+            refresh();
+            // setMyQueries((myQueries) => {
+            //   myQueries.filter((q) => q._id !== _id);
+            // });
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
+  };
   return (
     <div className="flex flex-col p-6 rounded-lg shadow-md border border-stroke">
       {/* questioner div */}
@@ -72,11 +108,12 @@ const MyQueriesCard = ({ myQuery }) => {
                   Update
                 </button>
               </Link>
-              <Link to={`/update-query`}>
-                <button className="bg-red-500 hover:bg-red-600 text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
-                  Delete
-                </button>
-              </Link>
+              <button
+                onClick={handleDelete}
+                className="bg-red-500 hover:bg-red-600 text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>
