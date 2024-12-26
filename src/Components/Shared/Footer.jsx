@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.webp";
+import { FaFacebook, FaLinkedin } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div>
@@ -30,12 +31,13 @@ const Footer = () => {
           <a className="link link-hover">Press kit</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <h6 className="footer-title">Social Media</h6>
+          <div className="flex gap-3">
+            <FaFacebook size={30} /> <FaLinkedin size={30}></FaLinkedin>
+          </div>
         </nav>
       </footer>
+    <h3 className="text-center font-semibold text-xl md:text-xl py-6">&copy; 2024 Suggestify. All rights reserved.</h3>
     </div>
   );
 };

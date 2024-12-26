@@ -47,9 +47,31 @@ const router = createBrowserRouter([
       },
       { path: "/log-in", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
-      { path: "/add-queries", element: <AddQueries></AddQueries> },
-      { path: "/query-details/:id", element: <QueryDetails></QueryDetails> },
-      { path: "/update-query/:id", element: <Update></Update> },
+      {
+        path: "/add-queries",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddQueries></AddQueries>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/query-details/:id",
+        element: (
+          <PrivateRoute>
+            <QueryDetails></QueryDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-query/:id",
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

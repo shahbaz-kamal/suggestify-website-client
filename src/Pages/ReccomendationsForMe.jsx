@@ -26,39 +26,46 @@ const ReccomendationsForMe = () => {
   return (
     <div>
       <Title title={"Recommendations for me"}></Title>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          {/* head */}
-          <thead>
-            <tr>
-              <th></th>
-              <th>Recommender Name</th>
-              <th>Recommender Email</th>
-              <th>Query Title</th>
-              <th>Product Name</th>
-              <th>Recommendation Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* row 1 */}
-
-            {recommendationsForMe.map((rec, index) => (
-              <tr key={rec._id}>
-                <th>{index + 1}</th>
-                <td>{rec.recommenderName}</td>
-                <td>{rec.recommendarEmail}</td>
-                <td>{rec.queryTitle}</td>
-                <td>{rec.productName}</td>
-                <td>
-                  {format(new Date(rec.recommendationDateAndTime), "PPp")}
-                </td>
+      {recommendationsForMe.length ? (
+        <div className="overflow-x-auto">
+          <table className="table table-zebra">
+            {/* head */}
+            <thead>
+              <tr>
+                <th></th>
+                <th>Recommender Name</th>
+                <th>Recommender Email</th>
+                <th>Query Title</th>
+                <th>Product Name</th>
+                <th>Recommendation Time</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {/* row 1 */}
 
-            {/* row 2 */}
-          </tbody>
-        </table>
-      </div>
+              {recommendationsForMe.map((rec, index) => (
+                <tr key={rec._id}>
+                  <th>{index + 1}</th>
+                  <td>{rec.recommenderName}</td>
+                  <td>{rec.recommendarEmail}</td>
+                  <td>{rec.queryTitle}</td>
+                  <td>{rec.productName}</td>
+                  <td>
+                    {format(new Date(rec.recommendationDateAndTime), "PPp")}
+                  </td>
+                </tr>
+              ))}
+
+              {/* row 2 */}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <h3 className="text-center font-semibold text-lg md:text-xl">
+          {" "}
+          Your queries have not recommendation yet
+        </h3>
+      )}
     </div>
   );
 };

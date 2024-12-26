@@ -1,6 +1,8 @@
 import React from "react";
 import Banner from "../Components/Banner";
 import RecentQueries from "../Components/RecentQueries";
+import SuggestionCategory from "../Components/SuggestionCategory";
+import Faq from "../Components/Faq";
 
 const Home = () => {
   return (
@@ -10,6 +12,12 @@ const Home = () => {
       </section>
       <section>
         <RecentQueries></RecentQueries>
+      </section>
+      <section>
+        <SuggestionCategory></SuggestionCategory>
+      </section>
+      <section>
+        <Faq></Faq>
       </section>
     </div>
   );

@@ -32,33 +32,8 @@ const MyQueries = () => {
   }, []);
   return (
     <div className="px-2 md:px-0 space-y-6 md:space-y-8 lg:space-y-10">
-      {/* My queries */}
-      <section>
-        <Title title={"My queries"}></Title>
-        <div className="mb-6">
-          {myQueries.length ? (
-            ""
-          ) : (
-            <h1 className="text-center text-color-text text-lg md:text-xl ">
-              You haven't added any queries yet. Please add a query to see your
-              queries here
-            </h1>
-          )}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {myQueries.map((myQuery) => (
-            <MyQueriesCard
-              key={myQuery._id}
-              myQuery={myQuery}
-              setMyQueries={setMyQueries}
-              myQueries={myQueries}
-              refresh={refresh}
-            ></MyQueriesCard>
-          ))}
-        </div>
-      </section>
-      {/* add query banner */}
-      <section>
+     {/* add query banner */}
+     <section>
         <Title title={"Add Queries"}></Title>
         <div
           className="hero rounded-md"
@@ -88,6 +63,33 @@ const MyQueries = () => {
           </div>
         </div>
       </section>
+    
+      {/* My queries */}
+      <section>
+        <Title title={"My queries"}></Title>
+        <div className="mb-6">
+          {myQueries.length ? (
+            ""
+          ) : (
+            <h1 className="text-center text-color-text text-lg md:text-xl ">
+              You haven't added any queries yet. Please add a query to see your
+              queries here
+            </h1>
+          )}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {myQueries.map((myQuery) => (
+            <MyQueriesCard
+              key={myQuery._id}
+              myQuery={myQuery}
+              setMyQueries={setMyQueries}
+              myQueries={myQueries}
+              refresh={refresh}
+            ></MyQueriesCard>
+          ))}
+        </div>
+      </section>
+     
     </div>
   );
 };

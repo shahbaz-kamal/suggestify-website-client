@@ -65,52 +65,55 @@ const MyRecommendations = () => {
     <div>
       <Title title={"My Recommendation"}></Title>
       {/* table starts */}
-
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          {/* head */}
-          <thead>
-            <tr>
-              <th></th>
-              <th>Questioner Name</th>
-              <th>Questioner Email</th>
-              <th>Product Name</th>
-              <th>Recommendation Time</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* row 1 */}
-
-            {myRecommendations.map((rec, index) => (
-              <tr key={rec._id}>
-                <th>{index + 1}</th>
-                <td>{rec.questionerName}</td>
-                <td>{rec.questionerEmail}</td>
-                <td>{rec.productName}</td>
-                <td>
-                  {format(new Date(rec.recommendationDateAndTime), "PPp")}
-                </td>
-                <td>
-                  {
-                    <div
-                      onClick={() => handleDelete(rec._id, rec.queryId)}
-                      className=""
-                      data-tooltip-id="my-tooltip"
-                      data-tooltip-content="Delete "
-                      data-tooltip-place="left"
-                    >
-                      <MdDelete size={30} color="#ff0000" />
-                    </div>
-                  }
-                </td>
+      {myRecommendations.length ? (
+        <div className="overflow-x-auto">
+          <table className="table table-zebra ">
+            {/* head */}
+            <thead>
+              <tr>
+                <th></th>
+                <th>Questioner Name</th>
+                <th>Questioner Email</th>
+                <th>Product Name</th>
+                <th>Recommendation Time</th>
+                <th>Action</th>
               </tr>
-            ))}
+            </thead>
+            <tbody>
+              {/* row 1 */}
 
-            {/* row 2 */}
-          </tbody>
-        </table>
-      </div>
+              {myRecommendations.map((rec, index) => (
+                <tr key={rec._id}>
+                  <th>{index + 1}</th>
+                  <td>{rec.questionerName}</td>
+                  <td>{rec.questionerEmail}</td>
+                  <td>{rec.productName}</td>
+                  <td>
+                    {format(new Date(rec.recommendationDateAndTime), "PPp")}
+                  </td>
+                  <td>
+                    {
+                      <div
+                        onClick={() => handleDelete(rec._id, rec.queryId)}
+                        className=""
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content="Delete "
+                        data-tooltip-place="left"
+                      >
+                        <MdDelete size={30} color="#ff0000" />
+                      </div>
+                    }
+                  </td>
+                </tr>
+              ))}
+
+              {/* row 2 */}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <h3 className="text-center font-semibold text-lg md:text-xl"> You have not recommended yet</h3>
+      )}
     </div>
   );
 };

@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import loginAnimationData from "../../assets/login.json";
 import Lottie from "lottie-react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     user,
     setUser,
@@ -34,6 +36,7 @@ const Login = () => {
           text: `Google sign in Successfull `,
           icon: "success",
         });
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log("Error", error.message);
@@ -90,6 +93,7 @@ const Login = () => {
           text: "Login Successfull",
           icon: "success",
         });
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         setLoading(false);

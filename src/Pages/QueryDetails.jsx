@@ -148,7 +148,7 @@ const QueryDetails = () => {
   return (
     <div className="px-2 md:px-0">
       <Title title={"Query Details"}></Title>
-      <div className="flex flex-col p-6 rounded-lg shadow-sm border border-stroke">
+      <div className="flex flex-col p-6 rounded-lg shadow-sm border border-stroke mb-6 md:mb-8 lg:mb-10">
         {/* questioner div */}
         <div className="flex gap-6 items-center ">
           <div className="w-16 h-16  rounded-full">
@@ -207,7 +207,7 @@ const QueryDetails = () => {
         {user?.email === questionerEmail ? (
           ""
         ) : (
-          <section className="mt-6 md:mt-8 lg:mt-10">
+          <section className="my-6 md:my-8 lg:my-10 ">
             <Title title={"Recommmend for this query"}></Title>
             <div className="card bg-base-100 w-full lg:w-[80%] lg:mx-auto shrink-0 shadow-2xl">
               <form
@@ -291,7 +291,9 @@ const QueryDetails = () => {
       ) : (
         <section>
           <Title title={"All Recommendation For This Query"}></Title>
-          <h3 className="text-lg md:text-xl text-center font-semibold">There is no recommendetaion for this query yet</h3>
+          <h3 className="text-lg md:text-xl text-center font-semibold">
+            There is no recommendetaion for this query yet
+          </h3>
         </section>
       )}
     </div>
