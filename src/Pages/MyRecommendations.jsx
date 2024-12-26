@@ -39,8 +39,6 @@ const MyRecommendations = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const info = { id, queryId };
-
         axiosSecure
           .delete(`my-recommendation?id=${id}&queryId=${queryId}`)
           .then((res) => {
@@ -74,7 +72,7 @@ const MyRecommendations = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
+              <th>Questioner Name</th>
               <th>Questioner Email</th>
               <th>Product Name</th>
               <th>Recommendation Time</th>
@@ -88,7 +86,7 @@ const MyRecommendations = () => {
               <tr key={rec._id}>
                 <th>{index + 1}</th>
                 <td>{rec.questionerName}</td>
-                <td>{rec.recommendarEmail}</td>
+                <td>{rec.questionerEmail}</td>
                 <td>{rec.productName}</td>
                 <td>
                   {format(new Date(rec.recommendationDateAndTime), "PPp")}
