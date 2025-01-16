@@ -20,12 +20,35 @@ https://suggestify-website.netlify.app/
 
 ## Features
 
-- **Add/Update/Delete Queries:**: Users can manage their product-related queries.
-- **View Queries:**: Browse queries posted by other users, complete with details and alternative recommendations.
-- **Add Recommendations:**: Contribute suggestions for specific queries.
+- **User Authentication:**
+  - Secure login and registration system, supporting email/password login and Google Sign-in.
 
-- **Delete or Modify Comments: **: Users can manage their feedback and recommendations.
-- **Search Functionality:**: Search for queries based on product names.
+- **Query Management:**
+  - Users can add, update, delete, and view their queries related to product recommendations.
+
+- **Recommendations:**
+  - Users can add, view, and delete recommendations for specific products.
+
+- **Private Routes:**
+  - Pages like "Add Queries," "My Queries," and "My Recommendations" are private and accessible only to logged-in users.
+
+- **Responsive Design:**
+  - Fully responsive design that ensures a seamless user experience across mobile, tablet, and desktop devices.
+
+- **Dynamic Layout:**
+  - Ability to toggle between different grid layouts on the "All Queries" page.
+
+- **JWT Authentication:**
+  - Secures private routes using JWT tokens for authentication and authorization.
+
+- **Search Functionality:**
+  - Users can search for queries based on product names.
+
+- **Error Handling:**
+  - A 404 error page with a navigation button to return to the homepage.
+
+- **Deployment Ready:**
+  - Deployed and fully functional on Netlify, with proper handling of CORS and production configurations.
 
 
 
