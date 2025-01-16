@@ -5,7 +5,7 @@
 
 # Suggestify - Product Recommendation Platform🌟
 
-**Suggestify website** Suggestify is a dynamic and user-friendly product recommendation platform designed to help users find and share the best products. Users can create, update, and delete their queries about products, view alternative recommendations, and contribute by adding their own suggestions. The platform ensures a collaborative experience while maintaining intuitive navigation and responsiveness.
+**Suggestify website** is a dynamic and user-friendly product recommendation platform designed to help users find and share the best products. Users can create, update, and delete their queries about products, view alternative recommendations, and contribute by adding their own suggestions. The platform ensures a collaborative experience while maintaining intuitive navigation and responsiveness.
 
 
 ## Live Link:
