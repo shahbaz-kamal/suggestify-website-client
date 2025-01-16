@@ -11,7 +11,8 @@
 ## Live Link:
 https://suggestify-website.netlify.app/
 
-
+## Purpose
+This project is designed to provide users with the ability to add, update, delete queries, view recommendations, and modify comments related to product recommendations. It also includes a secure login system, responsive design, and JWT-based authentication for private routes.
 
 
 
