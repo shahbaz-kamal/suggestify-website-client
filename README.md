@@ -1,4 +1,6 @@
-
+<div align="center">
+  <img height="400" src="https://raw.githubusercontent.com/shahbaz-kamal/career-compass-website/refs/heads/main/src/assets/for_github_banner.jpg"  />
+</div>
 # Suggestify - Product Recommendation Platform🌟
 
 **Suggestify website** Suggestify is a dynamic and user-friendly product recommendation platform designed to help users find and share the best products. Users can create, update, and delete their queries about products, view alternative recommendations, and contribute by adding their own suggestions. The platform ensures a collaborative experience while maintaining intuitive navigation and responsiveness.
