@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="400" src="https://raw.githubusercontent.com/shahbaz-kamal/career-compass-website/refs/heads/main/src/assets/for_github_banner.jpg"  />
+  <img height="400" src="https://raw.githubusercontent.com/shahbaz-kamal/suggestify-website-client/refs/heads/main/src/assets/github_banner.jpg"  />
 </div>
 
 
