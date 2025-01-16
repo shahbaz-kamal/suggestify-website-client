@@ -55,23 +55,55 @@ This project is designed to provide users with the ability to add, update, delet
 
 
 
+###
+
 ## 🛠 Technology Used
 
-5. Run the following command and open the website locally on port 5173:
+###
 
-```bash
-npm run dev
-```
+ <div align="left">
+  <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" height="40" alt="tailwindcss logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" height="40" alt="firebase logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" height="40" alt="mongodb logo"  />
+</div>
+
+###
+
+## 💥 Dependencies:
+
+<!-- <h3 align="left"></h3> -->
+
+###
+
+<h3 align="left">"axios": "^1.7.9",<br>    "date-fns": "^4.1.0",<br>    "firebase": "^11.1.0",<br>    "localforage": "^1.10.0",<br>    "lottie-react": "^2.4.0",<br>    "match-sorter": "^8.0.0",<br>    "react": "^18.3.1",<br>    "react-dom": "^18.3.1",<br>    "react-icons": "^5.4.0",<br>    "react-router-dom": "^7.1.1",<br>    "react-tooltip": "^5.28.0",<br>    "sort-by": "^1.2.0",<br>    "sweetalert2": "^11.15.3",<br>    "swiper": "^11.1.15"</h3>
+
+###
+
+
+
+## 🔧 Installation Guidline:
 
 <p align="center" style="display: flex; align-items: center; justify-content: center;">
-  <span style="font-size: 20px; font-weight: bold;">Backend</span>
-  <img src="https://cdn-icons-png.flaticon.com/128/6213/6213731.png" alt="Front End Icon" width="15" height="15" style="margin-left: 8px;" />
+  <span style="font-size: 20px; font-weight: bold;">Front End</span>
+  <img src="https://cdn-icons-png.flaticon.com/128/1055/1055666.png" alt="Front End Icon" width="15" height="15" style="margin-left: 8px;" />
 </p>
+
+
+
 1. First clone the project by running
 
 ```bash
-  git clone https://github.com/shahbaz-kamal/sportify-hub-server.git
+  git clone https://github.com/shahbaz-kamal/sportify-hub-client.git
 ```
+
 2. Change your directory to the cloned folder by
 
 ```bash
@@ -83,33 +115,29 @@ npm run dev
 ```bash
 npm install
 ```
-4. Put your Mongodb uri in the constant named uri. 
-5. Create a MongoDB user by keeping username and password collected &  create a .env file in the root directory and put the following code:
+
+
+
+4. Create a firebase project and a file named .env.local in your root folder & use your firebase credintials as follows:
 
 ```bash
-DB_USER=your_mongodb_username
-DB_PASS=your_mongodb_Password
+VITE_apiKey=your_api_key
+VITE_authDomain=your_auth_domain
+VITE_projectId=your_project_id
+VITE_storageBucket=your_storage_bucket
+VITE_messagingSenderId=your_messagingSenderId
+VITE_appId=your_api_id
 ```
-6. Put the following code instead of  <db_username>:
+
+5. Run the following command and open the website locally on port 5173:
 
 ```bash
-${process.env.DB_USER}
+npm run dev
 ```
-7. Put the following code instead of  <db_password>:
 
-```bash
-${process.env.DB_PASS}
-```
-8. Run the following command and open the website locally on port 5000:
-
-
-```bash
-npm start
-```
-9. visit :
-
-```bash
-npm start
-```
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+  <span style="font-size: 20px; font-weight: bold;">Backend</span>
+  <img src="https://cdn-icons-png.flaticon.com/128/16318/16318927.png" alt="Front End Icon" width="15" height="15" style="margin-left: 8px;" />
+</p>
 
 ###
