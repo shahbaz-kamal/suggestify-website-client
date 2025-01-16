@@ -10,6 +10,17 @@
 
 https://suggestify-website.netlify.app/
 
+## 🔗 Server side link
+
+
+
+###
+
+<p align="left">Github: https://github.com/shahbaz-kamal/sportify-hub-server</p>
+<p align="left">Live: https://vercel.com/shahbazs-projects-fc08e2cf/sportify-hub-server</p>
+
+###
+
 ## Purpose
 
 This project is designed to provide users with the ability to add, update, delete queries, view recommendations, and modify comments related to product recommendations. It also includes a secure login system, responsive design, and JWT-based authentication for private routes.
