@@ -16,8 +16,8 @@ https://suggestify-website.netlify.app/
 
 ###
 
-<p align="left">Github: https://github.com/shahbaz-kamal/sportify-hub-server</p>
-<p align="left">Live: https://vercel.com/shahbazs-projects-fc08e2cf/sportify-hub-server</p>
+<p align="left">Github: https://github.com/shahbaz-kamal/suggestify-website-server</p>
+<p align="left">Live: https://suggestify-website-server.vercel.app/</p>
 
 ###
 
