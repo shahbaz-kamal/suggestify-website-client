@@ -13,10 +13,12 @@ const MainLayout = () => {
 
   return (
     <div className="">
-      <header className="container mx-auto">
-        <Navbar></Navbar>
+      <header className="bg-gradient-to-r from-[rgba(166,127,237,0.5)] to-[rgba(45,199,225,0.5)] backdrop-blur-md  z-10 w-full fixed flex items-center justify-center">
+        <div className="container mx-auto">
+          <Navbar></Navbar>
+        </div>
       </header>
-      <section className="container mx-auto">
+      <section className="container mx-auto pt-32">
         <Outlet></Outlet>
       </section>
       <footer className="bg-footer mt-8 md:mt-10 lg:mt-12">

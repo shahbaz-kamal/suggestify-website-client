@@ -105,7 +105,7 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="navbar  mb-6 md:mb-8 mt-2">
+    <div className="navbar py-2 md:py-4 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

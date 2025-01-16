@@ -23,7 +23,7 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper h-[70vh]"
       >
         <SwiperSlide>
           <Slide
