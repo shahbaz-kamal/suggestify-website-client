@@ -150,7 +150,7 @@ npm run dev
 1. First clone the project by running
 
 ```bash
-  git clone https://github.com/shahbaz-kamal/71-digital-sign-server.git
+  git clone https://github.com/shahbaz-kamal/suggestify-website-server.git
 ```
 
 2. Change your directory to the cloned folder by
@@ -171,8 +171,8 @@ npm install
 ```bash
 DB_USER=your_mongodb_username
 DB_PASS=your_mongodb_Password
-ACCESS_TOKEN_SECRET=token_secret_for_jwt_token
-PAYMENT_SECRET_KEY=stripe_secret_key
+
+
 ```
 
 6. Put the following code instead of <db_username>:
