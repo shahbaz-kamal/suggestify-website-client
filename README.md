@@ -146,3 +146,57 @@ npm run dev
 </p>
 
 ###
+
+1. First clone the project by running
+
+```bash
+  git clone https://github.com/shahbaz-kamal/71-digital-sign-server.git
+```
+
+2. Change your directory to the cloned folder by
+
+```bash
+  cd folder_name
+```
+
+3. Run the following to install dependencies:
+
+```bash
+npm install
+```
+
+4. Put your Mongodb uri in the constant named uri.
+5. Create a MongoDB user by keeping username and password collected & create a .env file in the root directory and put the following code:
+
+```bash
+DB_USER=your_mongodb_username
+DB_PASS=your_mongodb_Password
+ACCESS_TOKEN_SECRET=token_secret_for_jwt_token
+PAYMENT_SECRET_KEY=stripe_secret_key
+```
+
+6. Put the following code instead of <db_username>:
+
+```bash
+${process.env.DB_USER}
+```
+
+7. Put the following code instead of <db_password>:
+
+```bash
+${process.env.DB_PASS}
+```
+
+8. Run the following command and open the website locally on port 5000:
+
+```bash
+npm start
+```
+
+9. Run :
+
+```bash
+npm start
+```
+
+###
