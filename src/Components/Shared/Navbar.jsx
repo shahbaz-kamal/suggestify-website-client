@@ -132,9 +132,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <a className="btn btn-ghost text-xl md:text-2xl hidden md:inline-flex">
-            Suggestify
-          </a>
+          <Link to={"/"}>
+            {" "}
+            <h3 className=" text-xl md:text-2xl hidden md:inline-flex font-semibold mr-2">
+              Suggestify
+            </h3>
+          </Link>
+
           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full">
             <img className="w-full h-full rounded-full" src={logo} alt="" />
           </div>
