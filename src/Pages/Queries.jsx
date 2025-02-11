@@ -37,18 +37,6 @@ const Queries = () => {
     }
   };
 
-  const [doubleColumn, setDoubleColumn] = useState(false);
-  const [trippleColumn, setTripleColumn] = useState(true);
-
-  const handleTwoColumn = () => {
-    setDoubleColumn(true);
-    setTripleColumn(false);
-  };
-  const handleThreeColumn = () => {
-    setDoubleColumn(false);
-    setTripleColumn(true);
-  };
-
   useEffect(() => {
     const fetchAllQueries = async () => {
       try {
@@ -95,13 +83,11 @@ const Queries = () => {
 
   // handling reseting the parameters
 
-  const handleResetLayout = () => {
-    setDoubleColumn(false);
-    setTripleColumn(true);
-  };
-
   const handleResetSearch = () => {
     setSearch("");
+    setSelectedSort("");
+    setDisplayText("Sort By");
+    
   };
 
   return (
@@ -196,11 +182,7 @@ const Queries = () => {
           </div>
         </div> */}
       </div>
-      <div
-        className={`grid gap-6 grid-cols-1 md:grid-cols-2  ${
-          trippleColumn ? "lg:grid-cols-3" : "lg:grid-cols-2"
-        } `}
-      >
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-3">
         {queries.map((query) => (
           <AllQueryCard key={query._id} query={query}></AllQueryCard>
         ))}
