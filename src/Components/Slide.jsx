@@ -4,11 +4,11 @@ const Slide = ({ imageURL, title, subTitle }) => {
   return (
     <div>
       <div
-        className="relative w-full h-[70vh] bg-cover bg-center flex items-center justify-center rounded-xl"
+        className="relative w-full h-[75vh] bg-cover bg-center flex items-center justify-center "
         style={{ backgroundImage: `url(${imageURL})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60 rounded-xl"></div>
-        <div className="relative z-10 text-center text-white">
+        <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
+        <div className="relative z-10 text-center text-white container mx-auto">
           <h1 className="text-4xl font-bold text-[#E0F7FA] ">
             {title}
           </h1>

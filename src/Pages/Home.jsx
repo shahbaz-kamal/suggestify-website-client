@@ -7,7 +7,7 @@ import Faq from "../Components/Faq";
 const Home = () => {
   return (
     <div className="px-2 lg:px-0 space-y-6 md:space-y-10">
-      <section>
+      <section className="w-full">
         <Banner></Banner>
       </section>
       <section>

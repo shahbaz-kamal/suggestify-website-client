@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "./Banner.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
@@ -21,9 +22,8 @@ const Banner = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper h-[70vh]"
+        modules={[Pagination]}
+        className="mySwiper h-[75vh]"
       >
         <SwiperSlide>
           <Slide

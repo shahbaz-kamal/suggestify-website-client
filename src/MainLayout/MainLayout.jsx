@@ -18,7 +18,7 @@ const MainLayout = () => {
           <Navbar></Navbar>
         </div>
       </header>
-      <section className="container mx-auto pt-32">
+      <section className=" pt-32">
         <Outlet></Outlet>
       </section>
       <footer className="bg-footer mt-8 md:mt-10 lg:mt-12">
