@@ -7,11 +7,10 @@ export default {
         "color-text": "rgb(2, 15, 17)",
         background: "rgb(245, 253, 254)",
         primary: "rgb(45, 199, 225)",
+        "primary-20": "rgba(45, 199, 225,0.2)",
         secondary: "rgb(166, 127, 237)",
+        "secondary-20": "rgba(166, 127, 237,0.2)",
         accent: "rgb(188, 83, 231)",
-        footer: "#DCE6E7",
-        login: '#ECF6F1',
-        stroke:'rgba(17, 17, 17, 0.1)'
       },
     },
   },

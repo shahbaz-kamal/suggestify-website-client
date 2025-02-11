@@ -21,7 +21,7 @@ const MainLayout = () => {
       <section className="flex-grow ">
         <Outlet></Outlet>
       </section>
-      <footer className="bg-footer mt-8 md:mt-10 lg:mt-12 ">
+      <footer className="bg-secondary bg-opacity-10 mt-8 md:mt-10 lg:mt-12 ">
         <Footer></Footer>
       </footer>
     </div>

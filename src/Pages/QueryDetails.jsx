@@ -148,7 +148,7 @@ const QueryDetails = () => {
   return (
     <div className="px-2 md:px-0">
       <Title title={"Query Details"}></Title>
-      <div className="flex flex-col p-6 rounded-lg shadow-sm border border-stroke mb-6 md:mb-8 lg:mb-10">
+      <div className="flex flex-col p-6 rounded-lg shadow-sm border border-primary-20 mb-6 md:mb-8 lg:mb-10">
         {/* questioner div */}
         <div className="flex gap-6 items-center ">
           <div className="w-16 h-16  rounded-full">

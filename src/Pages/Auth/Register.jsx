@@ -126,7 +126,7 @@ const Register = () => {
   };
 
   return (
-    <div className="text-center bg-login rounded-md p-6">
+    <div className="text-center  rounded-md pt-32">
       <h1 className="text-5xl font-bold mb-6">Register now!</h1>
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <div className="card bg-base-100 w-[80%] md:w-[50%] lg:w-[35%]  shrink-0 shadow-2xl">
@@ -134,7 +134,7 @@ const Register = () => {
             <div className="w-full">
               <button
                 onClick={handleGoogleSignIn}
-                className="flex items-center justify-center gap-2 bg-login hover:bg-[#D4E9DD] transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg w-full"
+                className="flex items-center justify-center gap-2 bg-primary-20 hover:bg-secondary-20 transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg w-full"
               >
                 <FcGoogle size={25} /> Register with google
               </button>
