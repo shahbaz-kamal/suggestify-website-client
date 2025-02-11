@@ -23,8 +23,8 @@ const Navbar = () => {
         className={({ isActive }) =>
           `rounded-md transition-all duration-300 ${
             isActive
-              ? "bg-primary font-semibold text-lg"
-              : "hover:underline text-base"
+              ? "bg-primary font-bold text-lg"
+              : "hover:underline text-base font-bold"
           }`
         }
       >
@@ -35,8 +35,8 @@ const Navbar = () => {
         className={({ isActive }) =>
           `rounded-md transition-all duration-300 ${
             isActive
-              ? "bg-primary font-semibold text-lg"
-              : "hover:underline text-base"
+              ? "bg-primary font-bold text-lg"
+              : "hover:underline text-base font-bold"
           }`
         }
       >
@@ -48,8 +48,8 @@ const Navbar = () => {
           className={({ isActive }) =>
             `rounded-md transition-all duration-300 ${
               isActive
-                ? "bg-primary font-semibold text-lg"
-                : "hover:underline text-base"
+                ? "bg-primary font-bold text-lg"
+                : "hover:underline text-base font-bold"
             }`
           }
         >
@@ -64,8 +64,8 @@ const Navbar = () => {
           className={({ isActive }) =>
             `rounded-md transition-all duration-300 ${
               isActive
-                ? "bg-primary font-semibold text-lg"
-                : "hover:underline text-base"
+                ? "bg-primary font-bold text-lg"
+                : "hover:underline text-base font-bold"
             }`
           }
         >
@@ -80,8 +80,8 @@ const Navbar = () => {
           className={({ isActive }) =>
             `rounded-md transition-all duration-300 ${
               isActive
-                ? "bg-primary font-semibold text-lg"
-                : "hover:underline text-base"
+                ? "bg-primary font-bold text-lg"
+                : "hover:underline text-base font-bold"
             }`
           }
         >
@@ -90,6 +90,18 @@ const Navbar = () => {
       ) : (
         ""
       )}
+         <NavLink
+          to={"/contacts"}
+          className={({ isActive }) =>
+            `rounded-md transition-all duration-300 ${
+              isActive
+                ? "bg-primary font-bold text-lg"
+                : "hover:underline text-base font-bold "
+            }`
+          }
+        >
+          <li className="px-2 py-2 hover:underline">Contacts</li>
+        </NavLink>
     </>
   );
 
@@ -134,7 +146,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link to={"/"}>
             {" "}
-            <h3 className=" text-xl md:text-2xl hidden md:inline-flex font-semibold mr-2">
+            <h3 className=" text-xl md:text-2xl hidden xl:inline-flex font-semibold mr-2">
               Suggestify
             </h3>
           </Link>
