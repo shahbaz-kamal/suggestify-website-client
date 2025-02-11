@@ -57,6 +57,7 @@ const Login = () => {
         }
       })
       .catch((error) => {
+        setLoading(false)
         console.log("Error", error.message);
         Swal.fire({
           icon: "error",
