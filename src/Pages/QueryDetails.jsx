@@ -146,7 +146,7 @@ const QueryDetails = () => {
   // *for getting all recommendations for this query
 
   return (
-    <div className="px-2 md:px-0">
+    <div className="px-2 md:px-0 pt-32">
       <Title title={"Query Details"}></Title>
       <div className="flex flex-col p-6 rounded-lg shadow-sm border border-primary-20 mb-6 md:mb-8 lg:mb-10">
         {/* questioner div */}

@@ -30,7 +30,7 @@ const RecentQueries = () => {
   return (
     <div>
       <Title title={"Recent Queries"}></Title>
-      <div className="grid grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {queries.slice(0, 6).map((query) => (
           <HomeQueryCard key={query._id} query={query}></HomeQueryCard>
         ))}
