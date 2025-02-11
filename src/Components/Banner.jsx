@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import "./Banner.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Navigation ,Autoplay} from "swiper/modules";
 import Slide from "./Slide";
 
 const Banner = () => {
@@ -22,8 +22,12 @@ const Banner = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
-        className="mySwiper h-[75vh]"
+        autoplay={{
+          delay: 3000, // Auto-slide every 3 seconds
+          disableOnInteraction: false, // Keep autoplay working after user interaction
+        }}
+        modules={[Pagination,Autoplay]}
+        className="mySwiper h-[80vh]"
       >
         <SwiperSlide>
           <Slide
@@ -36,7 +40,9 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <Slide
-            imageURL={"https://i.ibb.co.com/DMKF2ZD/banner1.jpg"}
+
+            imageURL={"https://images.pexels.com/photos/4913769/pexels-photo-4913769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+            // imageURL={"https://i.ibb.co.com/DMKF2ZD/banner1.jpg"}
             title={"Your Questions, Answered"}
             subTitle={
               "Explore insights, share knowledge, and find solutions to all your queries."

@@ -6,17 +6,17 @@ import Faq from "../Components/Faq";
 
 const Home = () => {
   return (
-    <div className="px-2 lg:px-0 space-y-6 md:space-y-10">
+    <div className=" space-y-6 md:space-y-10">
       <section className="w-full">
         <Banner></Banner>
       </section>
-      <section>
+      <section className="container mx-auto px-2 lg:px-0">
         <RecentQueries></RecentQueries>
       </section>
-      <section>
+      <section className="container mx-auto px-2 lg:px-0">
         <SuggestionCategory></SuggestionCategory>
       </section>
-      <section>
+      <section className="container mx-auto px-2 lg:px-0">
         <Faq></Faq>
       </section>
     </div>
