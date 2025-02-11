@@ -62,7 +62,7 @@ const MyRecommendations = () => {
     });
   };
   return (
-    <div>
+    <div className="pt-32 container mx-auto">
       <Title title={"My Recommendation"}></Title>
       {/* table starts */}
       {myRecommendations.length ? (

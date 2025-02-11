@@ -57,7 +57,7 @@ const Queries = () => {
   };
 
   return (
-    <div className="px-2 md:px-0 ">
+    <div className="px-2 md:px-0 pt-32 container mx-auto">
       <Title title={"All Queries"}></Title>
       <div className="flex flex-col gap-3 md:flex-row md:justify-around items-center mb-6 md:mb-8 lg:mb-10">
         <div className="w-full md:w-auto">

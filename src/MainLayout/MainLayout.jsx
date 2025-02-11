@@ -12,16 +12,16 @@ const MainLayout = () => {
   }
 
   return (
-    <div className="">
+    <div className="flex flex-col min-h-screen">
       <header className="bg-gradient-to-r from-[rgba(166,127,237,0.5)] to-[rgba(45,199,225,0.5)] backdrop-blur-md  z-10 w-full fixed flex items-center justify-center">
         <div className="container mx-auto">
           <Navbar></Navbar>
         </div>
       </header>
-      <section className=" ">
+      <section className="flex-grow ">
         <Outlet></Outlet>
       </section>
-      <footer className="bg-footer mt-8 md:mt-10 lg:mt-12">
+      <footer className="bg-footer mt-8 md:mt-10 lg:mt-12 ">
         <Footer></Footer>
       </footer>
     </div>

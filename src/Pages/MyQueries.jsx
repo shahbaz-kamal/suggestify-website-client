@@ -31,7 +31,7 @@ const MyQueries = () => {
       });
   }, []);
   return (
-    <div className="px-2 md:px-0 space-y-6 md:space-y-8 lg:space-y-10">
+    <div className="px-2 md:px-0 space-y-6 md:space-y-8 lg:space-y-10 pt-32 container mx-auto">
      {/* add query banner */}
      <section>
         <Title title={"Add Queries"}></Title>

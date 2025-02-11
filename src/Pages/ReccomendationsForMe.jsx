@@ -24,7 +24,7 @@ const ReccomendationsForMe = () => {
     handleFetchRecommendationsForMe();
   }, []);
   return (
-    <div>
+    <div className="pt-32 container mx-auto">
       <Title title={"Recommendations for me"}></Title>
       {recommendationsForMe.length ? (
         <div className="overflow-x-auto">
