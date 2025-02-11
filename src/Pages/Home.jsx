@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import RecentQueries from "../Components/RecentQueries";
 import SuggestionCategory from "../Components/SuggestionCategory";
 import Faq from "../Components/Faq";
+import NewsLetter from "../Components/NewsLetter";
 
 const Home = () => {
   return (
@@ -15,6 +16,9 @@ const Home = () => {
       </section>
       <section className="container mx-auto px-2 lg:px-0">
         <SuggestionCategory></SuggestionCategory>
+      </section>
+      <section className=" px-2 lg:px-0">
+        <NewsLetter></NewsLetter>
       </section>
       <section className="container mx-auto px-2 lg:px-0">
         <Faq></Faq>

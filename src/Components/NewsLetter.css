@@ -1,0 +1,11 @@
+#news-letter-children {
+  background-image: url("../assets/newsBg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 10px;
+  text-align: center;
+  background-blend-mode: overlay;
+  color: white;
+}
