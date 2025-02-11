@@ -96,9 +96,9 @@ const HomeQueryCard = ({ query }) => {
         <div className="flex flex-col space-y-3 text-color-text h-full ">
           <h3 className="font-bold text-xl md:text-2xl flex-grow">
            
-          {queryTitle.length > 40 ? (
+          {queryTitle.length > 60 ? (
     <>
-      {queryTitle.slice(0, 40)}{" "}
+      {queryTitle.slice(0, 60)}{" "}
       <Link to={`/query-details/${_id}`}>
         <span className="text-primary font-medium">....View Details</span>
       </Link>

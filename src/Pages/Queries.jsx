@@ -10,6 +10,33 @@ const Queries = () => {
   const axiosSecure = UseAxiosSecure();
 
   const [search, setSearch] = useState("");
+  const [selectedSort, setSelectedSort] = useState(""); // State to store selected option
+  const [displayText, setDisplayText] = useState("Sort By");
+
+  const handleSortChange = (e) => {
+    const value = e.target.value;
+    setSelectedSort(value);
+
+    // Set display text based on selected option
+    switch (value) {
+      case "date_des":
+        setDisplayText("Sorted by Posted Date - DES");
+        break;
+      case "date_asc":
+        setDisplayText("Sorted by Posted Date - ASC");
+        break;
+      case "rec_des":
+        setDisplayText("Sorted by Recommendation Count - DES");
+        break;
+      case "rec_asc":
+        setDisplayText("Sorted by Recommendation Count - ASC");
+        break;
+      default:
+        setDisplayText("Sort By");
+        break;
+    }
+  };
+
   const [doubleColumn, setDoubleColumn] = useState(false);
   const [trippleColumn, setTripleColumn] = useState(true);
 
@@ -28,10 +55,31 @@ const Queries = () => {
         const response = await axiosSecure.get(
           `queries-for-all-query-page?search=${search}`
         );
-        const sortedQueries = await response.data.sort(
-          (a, b) => new Date(b.dateAndTime) - new Date(a.dateAndTime)
-        );
-        setQueries(sortedQueries);
+
+        let sortedQueries = [];
+        if (displayText === "Sorted by Posted Date - DES") {
+          sortedQueries = await response.data.sort(
+            (a, b) => new Date(b.dateAndTime) - new Date(a.dateAndTime)
+          );
+          setQueries(sortedQueries);
+        } else if (displayText === "Sorted by Posted Date - ASC") {
+          sortedQueries = await response.data.sort(
+            (a, b) => new Date(a.dateAndTime) - new Date(b.dateAndTime)
+          );
+          setQueries(sortedQueries);
+        } else if (displayText === "Sorted by Recommendation Count - DES") {
+          sortedQueries = await response.data.sort(
+            (a, b) => b.recommendationCount - a.recommendationCount
+          );
+          setQueries(sortedQueries);
+        } else if (displayText === "Sorted by Recommendation Count - ASC") {
+          sortedQueries = await response.data.sort(
+            (a, b) => a.recommendationCount - b.recommendationCount
+          );
+          setQueries(sortedQueries);
+        } else {
+          setQueries(response.data);
+        }
       } catch (error) {
         Swal.fire({
           icon: "error",
@@ -41,7 +89,7 @@ const Queries = () => {
       }
     };
     fetchAllQueries();
-  }, [search]);
+  }, [search, displayText]);
   console.log(queries);
   console.log(search);
 
@@ -83,18 +131,52 @@ const Queries = () => {
           </label>
         </div>
         <div onClick={handleResetSearch}>
-          {" "}
           <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg">
             Reset Search
           </button>
         </div>
-        <div onClick={handleResetLayout}>
-          {" "}
+        <div>
+          <select
+            className="bg-primary hover:cursor-pointer transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
+            value={selectedSort}
+            onChange={handleSortChange}
+          >
+            <option value="" disabled>
+              Sort By
+            </option>
+            <option value="date_des">
+              {selectedSort && displayText === "Sorted by Posted Date - DES"
+                ? "Sorted by Posted Date - DES"
+                : "Posted Date - DES"}{" "}
+            </option>
+            <option value="date_asc">
+              {" "}
+              {selectedSort && displayText === "Sorted by Posted Date - ASC"
+                ? "Sorted by Posted Date - ASC"
+                : "Posted Date - ASC"}{" "}
+            </option>
+            <option value="rec_des">
+              {selectedSort &&
+              displayText === "Sorted by Recommendation Count - DES"
+                ? "Sorted by Recommendation Count - DES"
+                : "Recommendation Count - DES"}
+            </option>
+            <option value="rec_asc">
+              {selectedSort &&
+              displayText === "Sorted by Recommendation Count - ASC"
+                ? "Sorted by Recommendation Count - ASC"
+                : "Recommendation Count - ASC"}
+            </option>
+          </select>
+
+          {/* <div className="mt-4 text-lg font-semibold">{displayText}</div> */}
+        </div>
+        {/* <div onClick={handleResetLayout}>
           <button className="bg-primary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg hidden lg:flex">
             Reset Layout
           </button>
-        </div>
-        <div className=" gap-4 items-center hidden lg:flex">
+        </div> */}
+        {/* <div className=" gap-4 items-center hidden lg:flex">
           <h3 className="text-xl">Select Grid Layout</h3>
           <div
             onClick={handleTwoColumn}
@@ -112,7 +194,7 @@ const Queries = () => {
           >
             <TfiLayoutColumn3 size={30} />
           </div>
-        </div>
+        </div> */}
       </div>
       <div
         className={`grid gap-6 grid-cols-1 md:grid-cols-2  ${
