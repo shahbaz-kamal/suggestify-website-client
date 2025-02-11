@@ -63,7 +63,7 @@ const HomeQueryCard = ({ query }) => {
     //     </div>
     //   </div>
     // </div>
-    <div className="flex flex-col p-6 rounded-lg shadow-md border border-primary-20">
+    <div className="flex flex-col p-5 rounded-lg shadow-md border border-primary-20">
       {/* questioner div */}
       <div className="flex gap-6 items-center ">
         <div className="w-16 h-16 rounded-full">

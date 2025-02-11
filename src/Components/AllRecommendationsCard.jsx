@@ -56,15 +56,14 @@ const AllRecommendationsCard = ({ recommendation }) => {
           />
         </div>
         <div className="space-y-3 text-color-text md:w-full lg:w-[65%]">
-          <h3 className="t font-bold text-xl md:text-2xl">{queryTitle}</h3>
+          <h3 className="t font-bold text-xl md:text-2xl">
+            {recommendationTitle}
+          </h3>
           <p>
             <span className="font-semibold">Recommendation Reason:</span>{" "}
             <span>{recommendationReason}</span>
           </p>
-          {/* <p className="">
-        <span className="font-semibold">Recommanded by Users:</span>{" "}
-        <span>{recommendationCount}</span>
-      </p> */}
+
           <div className="flex justify-center ">
             {" "}
             <div className="flex gap-2 mt-2">
