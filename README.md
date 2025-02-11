@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="400" src="https://raw.githubusercontent.com/shahbaz-kamal/suggestify-website-client/refs/heads/main/src/assets/github_banner.jpg"  />
+  <img height="400" src="https://github.com/shahbaz-kamal/suggestify-website-client/blob/main/src/assets/headShot.png"  />
 </div>
 
 # Suggestify - Product Recommendation Platform🌟
