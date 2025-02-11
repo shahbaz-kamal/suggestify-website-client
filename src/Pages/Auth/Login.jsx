@@ -6,8 +6,11 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
+import { QueryClient } from "@tanstack/react-query";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 
 const Login = () => {
+  const axiosPublic = UseAxiosPublic();
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -29,14 +32,29 @@ const Login = () => {
   // google sign in
   const handleGoogleSignIn = () => {
     googleSignInUser()
-      .then((result) => {
+      .then(async (result) => {
         setLoading(false);
-        Swal.fire({
-          title: "Good job!",
-          text: `Google sign in Successfull `,
-          icon: "success",
-        });
-        navigate(location?.state ? location.state : "/");
+        const email = result?.user?.email;
+        const name = result?.user?.displayName;
+        const photoURL = result?.user?.photoURL;
+        const newUser = { email, name, photoURL };
+        const { data } = await axiosPublic.post("google-user", newUser);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Good job!",
+            text: `Google sign in Successfull `,
+            icon: "success",
+          });
+          navigate(location?.state ? location.state : "/");
+          return;
+        } else {
+          Swal.fire({
+            title: "Good job!",
+            text: `Google sign in Successfull `,
+            icon: "success",
+          });
+          navigate(location?.state ? location.state : "/");
+        }
       })
       .catch((error) => {
         console.log("Error", error.message);

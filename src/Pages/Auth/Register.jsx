@@ -6,9 +6,11 @@ import { Link } from "react-router-dom";
 import registerAnimationData from "../../assets/register.json";
 import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
+import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const axiosPublic = UseAxiosPublic();
   const {
     user,
     setUser,
@@ -78,13 +80,28 @@ const Register = () => {
             };
             setUser(updatedUser);
           })
-          .then(() => {
+          .then(async() => {
             setLoading(false);
-            Swal.fire({
-              title: "Good job!",
-              text: "Registration Successfull",
-              icon: "success",
-            });
+
+
+           
+            const newUser = { email, name, photoURL:photo };
+            const { data } = await axiosPublic.post("google-user", newUser);
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good job!",
+                text: `Registration Successfull `,
+                icon: "success",
+              });
+    
+              return;
+            } else {
+              Swal.fire({
+                title: "Good job!",
+                text: `Registration Successfull `,
+                icon: "success",
+              });
+            }
           })
           .catch((err) => {
             Swal.fire({
@@ -107,13 +124,28 @@ const Register = () => {
 
   const handleGoogleSignIn = () => {
     googleSignInUser()
-      .then((result) => {
+      .then(async (result) => {
         setLoading(false);
-        Swal.fire({
-          title: "Good job!",
-          text: `Google sign in Successfull `,
-          icon: "success",
-        });
+        const email = result?.user?.email;
+        const name = result?.user?.displayName;
+        const photoURL = result?.user?.photoURL;
+        const newUser = { email, name, photoURL };
+        const { data } = await axiosPublic.post("google-user", newUser);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Good job!",
+            text: `Google sign in Successfull `,
+            icon: "success",
+          });
+
+          return;
+        } else {
+          Swal.fire({
+            title: "Good job!",
+            text: `Google sign in Successfull `,
+            icon: "success",
+          });
+        }
       })
       .catch((error) => {
         console.log("Error", error.message);

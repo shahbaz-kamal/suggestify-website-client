@@ -146,7 +146,7 @@ const QueryDetails = () => {
   // *for getting all recommendations for this query
 
   return (
-    <div className="px-2 md:px-0 pt-32">
+    <div className="px-2 md:px-0 pt-32 container mx-auto">
       <Title title={"Query Details"}></Title>
       <div className="flex flex-col p-6 rounded-lg shadow-sm border border-primary-20 mb-6 md:mb-8 lg:mb-10">
         {/* questioner div */}
@@ -278,7 +278,7 @@ const QueryDetails = () => {
       {/* all recomendation section */}
       {queryRecommendations.length ? (
         <section className="mt-6 md:mt-8 lg:mt-10">
-          <Title title={"All Recommendation For This Query"}></Title>
+          <Title title={"All Recommendations For This Query"}></Title>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {queryRecommendations.map((recommendation) => (
               <AllRecommendationsCard
