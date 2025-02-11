@@ -91,7 +91,7 @@ const Navbar = () => {
         ""
       )}
          <NavLink
-          to={"/contacts"}
+          to={"/about-us"}
           className={({ isActive }) =>
             `rounded-md transition-all duration-300 ${
               isActive
@@ -100,7 +100,7 @@ const Navbar = () => {
             }`
           }
         >
-          <li className="px-2 py-2 hover:underline">Contacts</li>
+          <li className="px-2 py-2 hover:underline">About Us</li>
         </NavLink>
     </>
   );

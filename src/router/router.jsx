@@ -12,7 +12,8 @@ import AddQueries from "../Pages/AddQueries";
 import Error from "../Components/Error";
 import QueryDetails from "../Pages/QueryDetails";
 import Update from "../Pages/Update";
-import ContactUs from "../Pages/ContactUs";
+
+import AboutUs from "../Pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -73,8 +74,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {path:"/contacts",
-        element: <ContactUs></ContactUs>
+      {path:"/about-us",
+        element: <AboutUs></AboutUs>
       }
     ],
   },
