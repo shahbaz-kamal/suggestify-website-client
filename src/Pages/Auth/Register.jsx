@@ -80,12 +80,10 @@ const Register = () => {
             };
             setUser(updatedUser);
           })
-          .then(async() => {
+          .then(async () => {
             setLoading(false);
 
-
-           
-            const newUser = { email, name, photoURL:photo };
+            const newUser = { email, name, photoURL: photo };
             const { data } = await axiosPublic.post("google-user", newUser);
             if (data.insertedId) {
               Swal.fire({
@@ -93,7 +91,7 @@ const Register = () => {
                 text: `Registration Successfull `,
                 icon: "success",
               });
-    
+
               return;
             } else {
               Swal.fire({
@@ -148,7 +146,7 @@ const Register = () => {
         }
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
         console.log("Error", error.message);
         Swal.fire({
           icon: "error",
@@ -167,7 +165,7 @@ const Register = () => {
             <div className="w-full">
               <button
                 onClick={handleGoogleSignIn}
-                className="flex items-center justify-center gap-2 bg-primary-20 hover:bg-secondary-20 transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg w-full"
+                className="flex items-center justify-center gap-2  border border-secondary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg w-full"
               >
                 <FcGoogle size={25} /> Register with google
               </button>

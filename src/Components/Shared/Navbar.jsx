@@ -181,7 +181,7 @@ const Navbar = () => {
           <Link>
             <button
               onClick={handleLogOut}
-              className="bg-accent hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
+              className="border border-secondary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
             >
               Logout
             </button>
@@ -192,7 +192,7 @@ const Navbar = () => {
               data-tooltip-id="my-tooltip"
               data-tooltip-content="login to see private content"
               data-tooltip-place="bottom"
-              className="bg-accent hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
+              className="border border-secondary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg"
             >
               Login
             </button>

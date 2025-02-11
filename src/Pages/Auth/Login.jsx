@@ -134,7 +134,7 @@ const Login = () => {
             <div className="w-full">
               <button
                 onClick={handleGoogleSignIn}
-                className="flex items-center justify-center gap-2 bg-primary-20 hover:bg-secondary-20 transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg w-full"
+                className="flex items-center justify-center gap-2  border border-secondary hover:bg-secondary hover:text-white transition duration-300 ease-in-out px-2 py-2 rounded-md font-semibold text-lg w-full"
               >
                 <FcGoogle size={25} /> Login with google
               </button>
