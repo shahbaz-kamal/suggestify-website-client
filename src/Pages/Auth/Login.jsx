@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import UseAuth from "../../Hooks/UseAuth";
 import { QueryClient } from "@tanstack/react-query";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const axiosPublic = UseAxiosPublic();
@@ -57,7 +58,7 @@ const Login = () => {
         }
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
         console.log("Error", error.message);
         Swal.fire({
           icon: "error",
@@ -127,6 +128,9 @@ const Login = () => {
 
   return (
     <div className="text-center  rounded-md pt-32">
+      <Helmet>
+        <title>Login || Suggestify</title>
+      </Helmet>
       <h1 className="text-5xl font-bold mb-6">Login now!</h1>
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <div className="card bg-base-100 w-[80%] md:w-[50%] lg:w-[35%]  shrink-0 shadow-2xl">

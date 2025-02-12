@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 import UseAuth from "../Hooks/UseAuth";
 import MyQueriesCard from "../Components/MyQueriesCard";
+import { Helmet } from "react-helmet-async";
 
 const MyQueries = () => {
   const { user } = UseAuth();
@@ -33,6 +34,9 @@ const MyQueries = () => {
   return (
     <div className="px-2 md:px-0 space-y-6 md:space-y-8 lg:space-y-10 pt-32 container mx-auto">
      {/* add query banner */}
+       <Helmet>
+             <title>My Posted Queries || Suggestify</title>
+           </Helmet>
      <section>
         <Title title={"Add Queries"}></Title>
         <div

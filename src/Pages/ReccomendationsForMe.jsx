@@ -3,6 +3,7 @@ import UseAuth from "../Hooks/UseAuth";
 import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 import Title from "../Components/Shared/Title";
 import { format } from "date-fns";
+import { Helmet } from "react-helmet-async";
 
 const ReccomendationsForMe = () => {
   const [recommendationsForMe, setRecommendationsForMe] = useState([]);
@@ -26,6 +27,9 @@ const ReccomendationsForMe = () => {
   return (
     <div className="pt-32 container mx-auto">
       <Title title={"Recommendations for me"}></Title>
+      <Helmet>
+        <title>Recommendations For Me || Suggestify</title>
+      </Helmet>
       {recommendationsForMe.length ? (
         <div className="overflow-x-auto">
           <table className="table table-zebra">

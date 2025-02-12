@@ -6,6 +6,7 @@ import { format } from "date-fns";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyRecommendations = () => {
   const [myRecommendations, setQueryRecommendations] = useState([]);
@@ -64,6 +65,9 @@ const MyRecommendations = () => {
   return (
     <div className="pt-32 container mx-auto">
       <Title title={"My Recommendation"}></Title>
+      <Helmet>
+        <title>My Recommendations || Suggestify</title>
+      </Helmet>
       {/* table starts */}
       {myRecommendations.length ? (
         <div className="overflow-x-auto">
@@ -112,7 +116,10 @@ const MyRecommendations = () => {
           </table>
         </div>
       ) : (
-        <h3 className="text-center font-semibold text-lg md:text-xl"> You have not recommended yet</h3>
+        <h3 className="text-center font-semibold text-lg md:text-xl">
+          {" "}
+          You have not recommended yet
+        </h3>
       )}
     </div>
   );

@@ -7,6 +7,7 @@ import registerAnimationData from "../../assets/register.json";
 import UseAuth from "../../Hooks/UseAuth";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -158,6 +159,9 @@ const Register = () => {
 
   return (
     <div className="text-center  rounded-md pt-32">
+      <Helmet>
+        <title>Register || Suggestify</title>
+      </Helmet>
       <h1 className="text-5xl font-bold mb-6">Register now!</h1>
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
         <div className="card bg-base-100 w-[80%] md:w-[50%] lg:w-[35%]  shrink-0 shadow-2xl">

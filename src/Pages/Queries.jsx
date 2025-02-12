@@ -4,6 +4,7 @@ import { TfiLayoutColumn2, TfiLayoutColumn3 } from "react-icons/tfi";
 import AllQueryCard from "../Components/AllqueryCard";
 import UseAxiosSecure from "../Hooks/UseAxiosSecure";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Queries = () => {
   const [queries, setQueries] = useState([]);
@@ -87,12 +88,14 @@ const Queries = () => {
     setSearch("");
     setSelectedSort("");
     setDisplayText("Sort By");
-    
   };
 
   return (
     <div className="px-2 md:px-0 pt-32 container mx-auto">
       <Title title={"All Queries"}></Title>
+      <Helmet>
+        <title>All Queries || Suggestify</title>
+      </Helmet>
       <div className="flex flex-col gap-3 md:flex-row md:justify-around items-center mb-6 md:mb-8 lg:mb-10">
         <div className="w-full md:w-auto">
           <label className="input input-bordered flex items-center gap-2">

@@ -7,6 +7,7 @@ import { format } from "date-fns";
 import Loading from "../Components/Loading";
 import UseAuth from "../Hooks/UseAuth";
 import AllRecommendationsCard from "../Components/AllRecommendationsCard";
+import { Helmet } from "react-helmet-async";
 
 const QueryDetails = () => {
   const axiosSecure = UseAxiosSecure();
@@ -148,6 +149,9 @@ const QueryDetails = () => {
   return (
     <div className="px-2 md:px-0 pt-32 container mx-auto">
       <Title title={"Query Details"}></Title>
+      <Helmet>
+        <title>Details || Suggestify</title>
+      </Helmet>
       <div className="flex flex-col p-6 rounded-lg shadow-sm border border-primary-20 mb-6 md:mb-8 lg:mb-10">
         {/* questioner div */}
         <div className="flex gap-6 items-center ">

@@ -85,23 +85,23 @@ const Navbar = () => {
             }`
           }
         >
-          <li className="px-2 py-2 hover:underline">My recommendations</li>
+          <li className="px-2 py-2 hover:underline">My Recommendations</li>
         </NavLink>
       ) : (
         ""
       )}
-         <NavLink
-          to={"/about-us"}
-          className={({ isActive }) =>
-            `rounded-md transition-all duration-300 ${
-              isActive
-                ? "bg-primary font-bold text-lg"
-                : "hover:underline text-base font-bold "
-            }`
-          }
-        >
-          <li className="px-2 py-2 hover:underline">About Us</li>
-        </NavLink>
+      <NavLink
+        to={"/about-us"}
+        className={({ isActive }) =>
+          `rounded-md transition-all duration-300 ${
+            isActive
+              ? "bg-primary font-bold text-lg"
+              : "hover:underline text-base font-bold "
+          }`
+        }
+      >
+        <li className="px-2 py-2 hover:underline">About Us</li>
+      </NavLink>
     </>
   );
 
