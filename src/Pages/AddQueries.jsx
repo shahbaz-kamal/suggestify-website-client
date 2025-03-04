@@ -56,7 +56,7 @@ const AddQueries = () => {
       });
   };
   return (
-    <div>
+    <div className="pt-32">
       {/* add query section */}
       <section className="text-color-text">
         <Title title={"Add Queries"}></Title>
